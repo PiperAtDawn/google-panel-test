@@ -3,14 +3,16 @@ import SearchBar from "./components/SearchBar";
 import Action from "./components/Action";
 import DetailsBar from './components/DetailsBar';
 import PopularTimes from './components/PopularTimes';
+import ReviewSummary from './components/ReviewSummary';
+import Review from './components/Review';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-import { faMapMarkerAlt, faDirections, faSave, faSearch, faTimes, faMobile, faShareAlt, faClock, faGlobe, faPhone, faPlus, faShieldAlt, faTags, faComment } from '@fortawesome/free-solid-svg-icons'
+import { faMapMarkerAlt, faDirections, faSave, faSearch, faTimes, faMobile, faShareAlt, faClock, faGlobe, faPhone, faPlus, faShieldAlt, faTags, faComment, faCamera } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function App() {
 
-library.add(fab, faSearch, faTimes, faDirections, faSave, faMapMarkerAlt, faMobile, faShareAlt, faClock, faGlobe, faPhone, faPlus, faShieldAlt, faTags, faComment);
+library.add(fab, faSearch, faTimes, faDirections, faSave, faMapMarkerAlt, faMobile, faShareAlt, faClock, faGlobe, faPhone, faPlus, faShieldAlt, faTags, faComment, faCamera);
 
 const [panelToggle, setPanelToggle] = useState(true);
 
@@ -19,6 +21,8 @@ const toggleBtnHandler = () => {
 }
 
 const [day, setDay] = useState("monday");
+
+const [ratings, setRatings] = useState([5, 5, 5, 5, 5, 4, 4, 4, 3, 3, 2, 1]);
 
 const actions = [
   { id: 1, icon: faDirections, text: "Directions"},
@@ -47,6 +51,12 @@ const popularTimes = [
   {id: 5, day: "friday", data: "Популярные часы пятницы"},
   {id: 6, day: "saturday", data: "Популярные часы субботы"},
   {id: 7, day: "sunday", data: "Популярные часы воскресенья"}
+]
+
+const reviews = [
+  {id: 1, name: "Inna Jankovic", totalReviews: 12, time: "10 months ago", rating: 5, text: "Lady at the ticket office get very offended if you don't visit the butterfly section"},
+  {id: 2, name: "BurkBurck Back", totalReviews: 153, time: "2 years ago", rating: 5, text: "Great museum to learn the city's historical developments"},
+  {id: 3, name: "Lisham Islam", totalReviews: 11, time: "a year ago", rating: 5, text: "This place is good for lots of regional history"}
 ]
 
 
@@ -93,6 +103,23 @@ const popularTimes = [
         </div>
 
         <PopularTimes day={day} setDay={setDay} times={popularTimes} />
+
+        <div className="photos">
+          <h2>Add photo</h2>
+          <button className="add-photo-btn"><FontAwesomeIcon icon={faCamera} style={{color: "blue"}}/>Add a photo</button>
+        </div>
+
+        <ReviewSummary ratings={ratings} />
+
+        <div className="reviews">
+          <div className="reviews-top-bar">
+            <h2>Reviews</h2>
+          </div>
+          {reviews.map((review) => (
+            <Review review={review}/>
+          ))}
+        </div>
+          
       </div>
       <button type="button" className="panel-toggle" onClick={toggleBtnHandler} style={{left: panelToggle ? "408px" : "0"}}>{panelToggle ? "<" : ">" }</button>
     </div>

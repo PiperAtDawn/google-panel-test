@@ -1,6 +1,6 @@
 import React from 'react';
-import PopularTimesDay from './PopularTimesDay'
-import './PopularTimes.scss'
+import PopularTimesDay from './PopularTimesDay';
+import './PopularTimes.scss';
 
 function PopularTimes ({day, setDay, times}) {
 

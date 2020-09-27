@@ -60,6 +60,10 @@ code {
   border-style: none;
 }
 
+button {
+  cursor: pointer;
+}
+
 #org-photo {
   width: 100%;
   object-fit: contain;
@@ -96,11 +100,24 @@ header {
 }
 
 .details {
-  height: fit-content;
   border-bottom-style: solid;
   border-color: gray;
   border-width: 1px;
   padding: 16px 24px;
+}
+
+.photos {
+  display: flex;
+  flex-direction: column;
+  border-bottom-style: solid;
+  border-color: gray;
+  border-width: 1px;
+  padding: 16px 24px;
+}
+
+.add-photo-btn {
+  width: fit-content;
+  align-self: center;
 }
 
 .actions {
@@ -113,7 +130,6 @@ header {
   height: 100%;
   border-radius: 12px;
   border-style: none;
-  cursor: pointer;
   box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.26);
   background-color: white;
   text-align: left;
@@ -128,5 +144,10 @@ header {
   width: fit-content;
   align-self: center;
   margin-top: 20px;
-  cursor: pointer;
+}
+
+.reviews {
+  .reviews-top-bar {
+    padding: 16px 24px;
+  }
 }

@@ -1,0 +1,17 @@
+.review-summary {
+    border-bottom-style: solid;
+    border-color: gray;
+    border-width: 1px;
+    padding: 16px 24px;
+    display: flex;
+    flex-direction: column;
+    .ratings {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .add-review-btn {
+        width: fit-content;
+        align-self: center;
+    }
+}

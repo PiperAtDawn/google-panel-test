@@ -3,6 +3,9 @@ hr {
 }
 
 .popular-times {
+    border-bottom-style: solid;
+    border-color: gray;
+    border-width: 1px;
     padding: 16px 24px;
     .top-half {
         display: flex;
@@ -10,7 +13,7 @@ hr {
         .days-selector {
             height: fit-content;
         }
-    }
+    }  
 }
 
 h2 {
