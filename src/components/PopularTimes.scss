@@ -1,0 +1,19 @@
+hr {
+    border-style: dashed;
+}
+
+.popular-times {
+    padding: 16px 24px;
+    .top-half {
+        display: flex;
+        align-items: center;
+        .days-selector {
+            height: fit-content;
+        }
+    }
+}
+
+h2 {
+    font-weight: 500;
+    margin-right: 20px;
+}

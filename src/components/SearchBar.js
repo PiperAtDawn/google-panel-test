@@ -5,10 +5,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 function SearchBar () {
     return (
       <div className="search-bar">
-        <div class="hamburger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
+        <div className="hamburger">
+            <div className="line1"></div>
+            <div className="line2"></div>
+            <div className="line3"></div>
         </div>
         <form>
             <input type="text" placeholder="Координаты"/>
