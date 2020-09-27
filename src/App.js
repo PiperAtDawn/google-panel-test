@@ -22,8 +22,6 @@ const toggleBtnHandler = () => {
 
 const [day, setDay] = useState("monday");
 
-const [ratings, setRatings] = useState([5, 5, 5, 5, 5, 4, 4, 4, 3, 3, 2, 1]);
-
 const actions = [
   { id: 1, icon: faDirections, text: "Directions"},
   { id: 2, icon: faSave, text: "Save"},
@@ -53,6 +51,8 @@ const popularTimes = [
   {id: 7, day: "sunday", data: "Популярные часы воскресенья"}
 ]
 
+const ratings = [5, 5, 5, 5, 5, 4, 4, 4, 3, 3, 2, 1];
+
 const reviews = [
   {id: 1, name: "Inna Jankovic", totalReviews: 12, time: "10 months ago", rating: 5, text: "Lady at the ticket office get very offended if you don't visit the butterfly section"},
   {id: 2, name: "BurkBurck Back", totalReviews: 153, time: "2 years ago", rating: 5, text: "Great museum to learn the city's historical developments"},
@@ -77,7 +77,7 @@ const reviews = [
         
         <div className="actions">
           {actions.map((action) => (
-            <Action icon = {action.icon} text = {action.text} />
+            <Action icon = {action.icon} text = {action.text} key={action.id} />
           ))}
         </div>
         
@@ -94,7 +94,7 @@ const reviews = [
         
         <div className="details">
           {details.map((detail) => (
-            <DetailsBar icon = {detail.icon} text = { detail.text} />
+            <DetailsBar icon = {detail.icon} text = { detail.text} key={detail.id}/>
           ))}
           <button className="suggest-edit-btn">
             <FontAwesomeIcon icon={faComment} style={{color: "blue"}}/>
@@ -116,7 +116,7 @@ const reviews = [
             <h2>Reviews</h2>
           </div>
           {reviews.map((review) => (
-            <Review review={review}/>
+            <Review review={review} key={review.id}/>
           ))}
         </div>
           
